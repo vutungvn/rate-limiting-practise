@@ -1,0 +1,24 @@
+{
+  "name": "bai8-payment-gateway-limiter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bai 8 - Chon thuat toan gioi han cho cong thanh toan",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "jest --runInBand",
+    "simulate": "ts-node src/simulation/run-simulation.ts",
+    "bench:memory": "node --expose-gc -r ts-node/register src/simulation/memory-benchmark.ts"
+  },
+  "dependencies": {
+    "ioredis": "^5.11.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.6.5",
+    "fengari": "^0.1.4",
+    "jest": "^30.5.2",
+    "ts-jest": "^29.4.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

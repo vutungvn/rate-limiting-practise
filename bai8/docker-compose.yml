@@ -1,0 +1,9 @@
+# Redis dung chung cho 6 tien trinh. Gioi han 256MB dung theo de bai.
+# noeviction: KHONG BAO GIO tu xoa khoa TAT khi day bo nho - xoa TAT = 6 tien trinh dat trung o gui
+# = vuot 3.000 req/s. Thieu bo nho thi lenh ghi bao loi -> PaymentRateLimiter fail-closed.
+services:
+  redis:
+    image: redis:7.4-alpine
+    command: ["redis-server", "--maxmemory", "256mb", "--maxmemory-policy", "noeviction"]
+    ports:
+      - "6379:6379"
